@@ -1,7 +1,7 @@
-package com.progmatic.store.controller;
+package com.progmatic.store.auth.controller;
 
-import com.progmatic.store.utils.RegisterRequest;
-import com.progmatic.store.utils.jwt.JwtUtils;
+import com.progmatic.store.auth.utils.RegisterRequest;
+import com.progmatic.store.auth.utils.jwt.JwtUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
