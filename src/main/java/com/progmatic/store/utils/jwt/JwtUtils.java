@@ -68,5 +68,4 @@ public class JwtUtils {
   private String getBase64UrlEncoder(byte[] byteArray) {
     return Base64.getUrlEncoder().withoutPadding().encodeToString(byteArray);
   }
-
 }
