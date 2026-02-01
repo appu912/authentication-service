@@ -1,4 +1,4 @@
-package com.progmatic.store.utils.jwt;
+package com.progmatic.store.auth.utils.jwt;
 
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
@@ -68,5 +68,4 @@ public class JwtUtils {
   private String getBase64UrlEncoder(byte[] byteArray) {
     return Base64.getUrlEncoder().withoutPadding().encodeToString(byteArray);
   }
-
 }

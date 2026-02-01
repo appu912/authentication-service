@@ -1,18 +1,26 @@
 plugins {
 	`java-library`
-	id("org.springframework.boot") version "4.0.2"
-	id("com.diffplug.spotless") version "8.2.0"
+	id("org.springframework.boot")
+	id("com.diffplug.spotless")
 }
+
+val springBootVersion: String by project
 
 repositories {
 	mavenCentral()
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-web:4.0.2")
+	implementation(platform("org.springframework.boot:spring-boot-dependencies:$springBootVersion"))
+	annotationProcessor(platform("org.springframework.boot:spring-boot-dependencies:$springBootVersion"))
 
-	compileOnly("org.projectlombok:lombok:1.18.42")
-	annotationProcessor("org.projectlombok:lombok:1.18.42")
+	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+
+	implementation("org.postgresql:postgresql")
+
+	compileOnly("org.projectlombok:lombok")
+	annotationProcessor("org.projectlombok:lombok")
 }
 
 spotless {

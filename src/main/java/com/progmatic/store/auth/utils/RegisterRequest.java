@@ -1,4 +1,4 @@
-package com.progmatic.store.utils;
+package com.progmatic.store.auth.utils;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

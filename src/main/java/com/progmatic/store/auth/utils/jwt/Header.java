@@ -1,4 +1,4 @@
-package com.progmatic.store.utils.jwt;
+package com.progmatic.store.auth.utils.jwt;
 
 import lombok.Data;
 
