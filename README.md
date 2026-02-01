@@ -6,7 +6,7 @@
 2. Spring Boot Backend Application Setup
 
 
-### PostgresSQL Setup
+### PostgresSQL Database Setup
 
 You can setup postgresql on your linux OS using [this](https://github.com/appu912/software-development-setup/blob/main/postgreSQL-setup.md). Now we'll setup the authentication database using below instructions.
 So from your `postgres` user shell create the `auth-db` using the `createdb` command.
@@ -140,3 +140,18 @@ auth-db=> DROP TABLE auth.user_credentials;
 ERROR:  must be owner of table user_credentials 
 ```
 You can see that we can make a `SELECT` query using `auth_user_rw` but cannot drop the table. Now we are all set!!
+
+### Spring Boot Backend Application Setup
+
+After setting up your database, clone this repo on your system and do a gradle build.
+
+```console
+gradle clean build --refresh-dependencies --no-build-cache --console=verbose
+```
+If the build is successful, please use the jar command to run your application.
+
+```console
+java -DUSERNAME=auth_user_rw -DPASSWORD=auth_user_rw -jar build/libs/authentication-service-1.0.0-SNAPSHOT.jar
+```
+
+
