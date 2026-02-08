@@ -1,4 +1,5 @@
 {
   "email": "test-user@gmail.com",
-  "password": "Password@testUser1"
+  "password": "Password@testUser1",
+  "confirm_password": "Password@testUser1"
 }

@@ -1,4 +1,4 @@
-# Authentication Service
+# Authorization Service
 
 ## Local Setup
 
@@ -8,7 +8,7 @@
 
 ### PostgresSQL Database Setup
 
-You can setup postgresql on your linux OS using [this](https://github.com/appu912/software-development-setup/blob/main/postgreSQL-setup.md). Now we'll setup the authentication database using below instructions.
+You can setup postgresql on your linux OS using [this](https://github.com/appu912/software-development-setup/blob/main/postgreSQL-setup.md). Now we'll setup the authorization database using below instructions.
 So from your `postgres` user shell create the `auth-db` using the `createdb` command.
 
 ```console
@@ -151,7 +151,7 @@ gradle clean build --refresh-dependencies --no-build-cache --console=verbose
 If the build is successful, please use the jar command to run your application.
 
 ```console
-java -DUSERNAME=auth_user_rw -DPASSWORD=auth_user_rw -jar build/libs/authentication-service-1.0.0-SNAPSHOT.jar
+java -DUSERNAME=auth_user_rw -DPASSWORD=auth_user_rw -jar build/libs/authorization-service-1.0.0-SNAPSHOT.jar
 ```
 
 

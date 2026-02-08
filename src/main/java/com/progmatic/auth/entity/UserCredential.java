@@ -1,25 +1,28 @@
-package com.progmatic.store.auth.entity;
+package com.progmatic.auth.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import java.time.Instant;
 import java.util.UUID;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Data
 @NoArgsConstructor
 @Entity
 @Table(name = "user_credentials", schema = "auth")
-public class AuthUserCredentials {
-  @Id
+public class UserCredential {
+  @NotNull(message = "user_id is null.") @Id
   @Column(name = "user_id")
   private UUID userId;
 
-  @Column(name = "email", unique = true, nullable = false)
+  @NotBlank(message = "email is an empty string.") @Column(name = "email", unique = true, nullable = false)
   private String email;
 
-  @Column(name = "hashed_password", nullable = false)
+  @NotBlank(message = "hashed_password is an empty string.") @Column(name = "hashed_password", nullable = false)
   private String hashedPassword;
 
   @Column(name = "created_at", nullable = false, updatable = false)
@@ -27,10 +30,10 @@ public class AuthUserCredentials {
   private Instant createdAt;
 
   @Column(name = "updated_at", nullable = false)
-  @CreationTimestamp
+  @UpdateTimestamp
   private Instant updatedAt;
 
-  private AuthUserCredentials(Builder b) {
+  private UserCredential(Builder b) {
     this.userId = b.userId;
     this.email = b.email;
     this.hashedPassword = b.hashedPassword;
@@ -70,8 +73,8 @@ public class AuthUserCredentials {
       return this;
     }
 
-    public AuthUserCredentials build() {
-      return new AuthUserCredentials(this);
+    public UserCredential build() {
+      return new UserCredential(this);
     }
   }
 }
