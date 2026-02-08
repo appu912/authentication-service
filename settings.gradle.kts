@@ -1,4 +1,4 @@
-rootProject.name = "authentication-service"
+rootProject.name = "authorization-service"
 
 pluginManagement {
     val springBootVersion: String by settings
