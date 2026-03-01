@@ -8,7 +8,7 @@
 
 ### PostgresSQL Database Setup
 
-You can setup postgresql on your linux OS using [this](https://github.com/appu912/software-development-setup/blob/main/postgreSQL-setup.md). Now we'll setup the authorization database using below instructions.
+You can setup postgresql on your linux OS using [this](https://github.com/appu912/software-development-setup/blob/main/ubuntu-postgresql-setup.md). Now we'll setup the authorization database using below instructions.
 So from your `postgres` user shell create the `auth-db` using the `createdb` command.
 
 ```console
