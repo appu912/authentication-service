@@ -10,4 +10,5 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Added branch filters."
+      - run: echo "Verify Ubuntu Version."
+      - run: lsb_release -a
