@@ -10,4 +10,4 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-        run: echo "Added branch filters."
+      - run: echo "Added branch filters."
