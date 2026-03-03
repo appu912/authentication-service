@@ -1,5 +1,5 @@
 name: authorization-service
-run-name: ${{ github.repository }}-${{ github.head_ref }}-build
+run-name: ${{ github.repository }}-${{ github.head_ref || github.ref_name }}-build
 on:
   push:
     branches:
