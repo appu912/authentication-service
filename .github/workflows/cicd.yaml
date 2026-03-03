@@ -1,0 +1,28 @@
+name: authorization-service
+run-name: ${{ github.repository }}-${{ github.head_ref }}-build
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Verifying Ubuntu Version."
+      - run: lsb_release -a
+      - name: Checkout repository
+        uses: actions/checkout@v5
+      - name: Setup Java 21
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+      - run: java --version
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v5
+      - run: gradle --version
+      - run: gradle clean build --refresh-dependencies --no-build-cache --console=verbose --info
+      - run: echo "This job's status is ${{ job.status }}."
