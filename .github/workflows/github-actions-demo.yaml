@@ -19,9 +19,9 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
-        run: java --version
+      - run: java --version
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v5
-        run: gradle --version
+      - run: gradle --version
       - name: Build with gradle
-        run: gradle clean build --refresh-dependencies --no-build-cache --console=verbose --info
+      - run: gradle clean build --refresh-dependencies --no-build-cache --console=verbose --info
