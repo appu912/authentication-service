@@ -61,7 +61,7 @@ public class UserManagementServiceTest {
             e -> {
               Assertions.assertThat(e.getConstraintViolations())
                   .extracting(ConstraintViolation::getMessage)
-                  .containsExactlyInAnyOrder("Email is require.");
+                  .containsExactlyInAnyOrder("Email is required.");
             });
   }
 
